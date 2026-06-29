@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar"
-import { AppSidebar } from "@/components/ui/app-sidebar"
+import { AppShell } from "@/components/app-shell"
 import { clashGrotesk, satoshi } from "@/app/fonts"
 import "./globals.css"
 
@@ -22,10 +22,9 @@ export default function RootLayout({
       >
         <TooltipProvider>
           <SidebarProvider>
-            <AppSidebar />
-            <SidebarInset>
-              {children}
-            </SidebarInset>
+            <AppShell>
+              <SidebarInset>{children}</SidebarInset>
+            </AppShell>
           </SidebarProvider>
         </TooltipProvider>
       </body>
