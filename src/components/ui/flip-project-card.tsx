@@ -58,13 +58,22 @@ export function FlipProjectCard({ project, className }: FlipProjectCardProps) {
           <p className="mt-3 flex-1 overflow-y-auto text-sm leading-relaxed text-grey-400">
             {project.description}
           </p>
-          <Link
-            href={detailHref}
-            onClick={(event) => event.stopPropagation()}
-            className="mt-4 text-sm font-semibold text-orange-400 underline-offset-4 hover:underline"
-          >
-            View project →
-          </Link>
+          {project.comingSoon ? (
+            <span
+              className="mt-4 text-sm font-semibold text-muted-foreground"
+              onClick={(event) => event.stopPropagation()}
+            >
+              {project.cardLinkLabel ?? "Coming soon"}
+            </span>
+          ) : (
+            <Link
+              href={detailHref}
+              onClick={(event) => event.stopPropagation()}
+              className="mt-4 text-sm font-semibold text-orange-400 underline-offset-4 hover:underline"
+            >
+              {project.cardLinkLabel ?? "View project →"}
+            </Link>
+          )}
         </div>
       </motion.div>
     </div>
