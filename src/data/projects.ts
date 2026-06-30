@@ -8,6 +8,8 @@ export type CaseStudyImage = {
   src?: string
   alt: string
   layout?: "full" | "grid-2"
+  /** Tailwind aspect-ratio class, e.g. aspect-[16/9] */
+  aspectClassName?: string
   /** Tailwind gradient classes when no src is provided */
   placeholderClassName?: string
 }
@@ -135,7 +137,7 @@ export const projects: Project[] = [
   {
     id: "biyu",
     companyName: "BIYU",
-    tagline: "Strategic design for a circular start-up",
+    tagline: "Own less. Do more.",
     role: "Product Design",
     category: "Product Design",
     description:
@@ -151,9 +153,10 @@ export const projects: Project[] = [
           "BIYU had just launched its app and monthly subscriptions, but the company was only a year old and almost nobody knew the brand yet. Without that recognition, people had little reason to download the app or pay for a subscription, and conversion sat at 1.8%. This was a make-or-break window to prove the subscription model could work, and to do that, BIYU needed to build trust with people before asking them to commit.",
         images: [
           {
-            alt: "BIYU rental flow overview",
+            src: "/assets/projects/biyu/biyu-banner.png",
+            alt: "BIYU — Own less. Do more.",
             layout: "full",
-            placeholderClassName: "bg-gradient-to-br from-orange-100 to-orange-400/40",
+            aspectClassName: "aspect-[16/9]",
           },
         ],
       },
@@ -164,14 +167,14 @@ export const projects: Project[] = [
           "Instead of pushing people straight to the app, we shifted focus to the web, where we could introduce BIYU and earn trust before asking for a commitment. With a three-person design team, we built high-conversion home and landing pages tailored to different needs, from first-time visitors still researching to seasoned renters who just wanted to move fast. The same thinking carried through the rest of the journey: a smoother checkout, a clear onboarding for someone's first rental, and an app experience built for frequent renters who value real-time tracking and quick reordering.",
         images: [
           {
-            alt: "BIYU strategy workshop",
+            src: "/assets/projects/biyu/Strategy-1.png",
+            alt: "BIYU checkout products list",
             layout: "grid-2",
-            placeholderClassName: "bg-gradient-to-br from-grey-200 to-orange-100",
           },
           {
-            alt: "BIYU user journey mapping",
+            src: "/assets/projects/biyu/Strategy-2.png",
+            alt: "BIYU product return scheduling",
             layout: "grid-2",
-            placeholderClassName: "bg-gradient-to-br from-orange-400/30 to-grey-300",
           },
         ],
       },
@@ -182,9 +185,10 @@ export const projects: Project[] = [
           "The work spanned three fronts. The biggest was the website, BIYU's new front door, built on a design system I helped shape so everything stayed consistent as the product grew. We also rebuilt the app for frequent renters, and shaped the brand itself, from social campaigns and ads to posters across the city of Amsterdam.",
         images: [
           {
-            alt: "BIYU checkout screens",
+            src: "/assets/projects/biyu/biyu-ads.png",
+            alt: "BIYU social campaign ads",
             layout: "full",
-            placeholderClassName: "bg-gradient-to-br from-grey-100 via-orange-100 to-orange-400/20",
+            aspectClassName: "aspect-[16/9]",
           },
         ],
       },
@@ -193,13 +197,6 @@ export const projects: Project[] = [
         title: "Outcome",
         description:
           "Conversion nearly doubled, climbing from 1.8% to 3.2%. The web-first bet paid off: by introducing BIYU and earning trust before asking for a commitment, the subscription model finally had room to prove itself.",
-        images: [
-          {
-            alt: "BIYU outcome metrics",
-            layout: "full",
-            placeholderClassName: "bg-gradient-to-br from-orange-400/20 to-grey-200",
-          },
-        ],
       },
     ],
     credits:
@@ -225,10 +222,10 @@ export const projects: Project[] = [
           "NOWATCH makes a screenless smartwatch, which means the app is the only place users can see and make sense of their data. NOWATCH's whole focus is stress as the root cause of health issues, but the app was still early, and users could see their biometric numbers with no way to connect them to the stress behind them. They had the data, but no way to understand it or act on it.",
         images: [
           {
-            alt: "NOWATCH app data overview",
+            src: "/assets/projects/nowatch/nowatch-thumbnail.png",
+            alt: "NOWATCH",
             layout: "full",
-            placeholderClassName:
-              "bg-gradient-to-br from-orange-100 to-orange-400/40",
+            aspectClassName: "aspect-[16/9]",
           },
         ],
       },
@@ -239,16 +236,14 @@ export const projects: Project[] = [
           "The fix was to give people ways to connect their data to real moments in their lives. I helped launch three core features, each built to turn raw bio-data into something people could understand and act on. Sessions let users log stressful moments as they happen, so the data has context. Check-ins ask how someone is feeling mentally and emotionally in those moments, pairing the body's signals with the person's own read. And Journeys, designed with the NOWATCH team, are two-week programs that turn all of that into healthier habits over time.",
         images: [
           {
-            alt: "NOWATCH Sessions feature",
+            src: "/assets/projects/nowatch/nowatch-image-2.png",
+            alt: "NOWATCH timeline view",
             layout: "grid-2",
-            placeholderClassName:
-              "bg-gradient-to-br from-grey-200 to-orange-100",
           },
           {
-            alt: "NOWATCH Check-ins feature",
+            src: "/assets/projects/nowatch/nowatch-image-3.png",
+            alt: "NOWATCH sleep summary",
             layout: "grid-2",
-            placeholderClassName:
-              "bg-gradient-to-br from-orange-400/30 to-grey-300",
           },
         ],
       },
@@ -259,10 +254,14 @@ export const projects: Project[] = [
           "I designed all three features end to end, from first concept through to the final interface, working within NOWATCH's existing design system.",
         images: [
           {
-            alt: "NOWATCH Journeys feature screens",
-            layout: "full",
-            placeholderClassName:
-              "bg-gradient-to-br from-grey-100 via-orange-100 to-orange-400/20",
+            src: "/assets/projects/nowatch/nowatch-image-4.png",
+            alt: "NOWATCH timeline view",
+            layout: "grid-2",
+          },
+          {
+            src: "/assets/projects/nowatch/nowatch-image-5.png",
+            alt: "NOWATCH overview dashboard",
+            layout: "grid-2",
           },
         ],
       },
@@ -271,14 +270,6 @@ export const projects: Project[] = [
         title: "Outcome",
         description:
           "The three features turned the NOWATCH app from a raw biometric tracker into a tool people could actually use to understand their stress and restore some balance. The data finally meant something, because users could connect it to what was happening in their lives and do something about it.",
-        images: [
-          {
-            alt: "NOWATCH app outcome",
-            layout: "full",
-            placeholderClassName:
-              "bg-gradient-to-br from-orange-400/20 to-grey-200",
-          },
-        ],
       },
     ],
     credits: "Huge thanks to the NOWATCH team for the monthly hackathons. They taught me so much about designing, building, and shipping features in such a short span of time.",
@@ -302,10 +293,10 @@ export const projects: Project[] = [
           "22NIGHT was getting ready to officially launch, but the foundation wasn't ready to carry it. The brand was underdeveloped, and the platform was still early, built on a WordPress backend that couldn't meet what the company needed. At that point it was a small community of around 1,000 members in Amsterdam and a handful of venue partners. Launching on a shaky foundation risked burning first impressions with both the community and the venues, and those are hard to win back.",
         images: [
           {
-            alt: "22NIGHT platform before rebuild",
+            src: "/assets/projects/22night/22n-thumbnail.png",
+            alt: "22NIGHT",
             layout: "full",
-            placeholderClassName:
-              "bg-gradient-to-br from-orange-100 to-orange-400/40",
+            aspectClassName: "aspect-[16/9]",
           },
         ],
       },
@@ -316,16 +307,30 @@ export const projects: Project[] = [
           "We made the call to rebuild the brand and the platform from scratch. As a four-person team, two founders, a designer, and a developer, we started with the foundations of the 22NIGHT brand, then built outward in two directions. For the community, I designed a new website that made it easy to discover events across Amsterdam and other European cities. For the partners, we built a custom CMS and backend so venues and organisers could list events and see real data on who was showing up. Over the following years we kept adding to it, from spin-to-win free tickets to liking and following events, artists, and organisers, to a housing platform for community members looking for roommates.",
         images: [
           {
-            alt: "22NIGHT brand foundations",
-            layout: "grid-2",
-            placeholderClassName:
-              "bg-gradient-to-br from-grey-200 to-orange-100",
+            src: "/assets/projects/22night/22n-homepage.png",
+            alt: "22NIGHT homepage",
+            layout: "full",
+            aspectClassName: "aspect-[1920/1305]",
           },
           {
-            alt: "22NIGHT community website",
+            src: "/assets/projects/22night/22n-image-2.png",
+            alt: "22NIGHT events in Amsterdam",
             layout: "grid-2",
-            placeholderClassName:
-              "bg-gradient-to-br from-orange-400/30 to-grey-300",
+          },
+          {
+            src: "/assets/projects/22night/22n-image-3.png",
+            alt: "22NIGHT guestlist signup",
+            layout: "grid-2",
+          },
+          {
+            src: "/assets/projects/22night/22n-image-4.png",
+            alt: "22NIGHT ticket selection",
+            layout: "grid-2",
+          },
+          {
+            src: "/assets/projects/22night/22n-image-5.png",
+            alt: "22NIGHT ticket confirmation",
+            layout: "grid-2",
           },
         ],
       },
@@ -336,10 +341,22 @@ export const projects: Project[] = [
           "I designed the 22NIGHT brand and its assets, the community website, and the custom backend that partners used to run their events. As the platform grew, I designed the features we layered on top, from spin-to-win ticket giveaways to following events and artists.",
         images: [
           {
-            alt: "22NIGHT partner CMS and backend",
+            src: "/assets/projects/22night/22n-partners-1.png",
+            alt: "22NIGHT for partners landing page",
             layout: "full",
-            placeholderClassName:
-              "bg-gradient-to-br from-grey-100 via-orange-100 to-orange-400/20",
+            aspectClassName: "aspect-[1920/1305]",
+          },
+          {
+            src: "/assets/projects/22night/22n-partners-2.png",
+            alt: "22NIGHT partner event creation and event page",
+            layout: "full",
+            aspectClassName: "aspect-[1920/1305]",
+          },
+          {
+            src: "/assets/projects/22night/22n-partners-3.png",
+            alt: "22NIGHT partner analytics dashboard",
+            layout: "full",
+            aspectClassName: "aspect-[1920/1305]",
           },
         ],
       },
@@ -348,14 +365,6 @@ export const projects: Project[] = [
         title: "Outcome",
         description:
           "The rebuild paid off. From around 1,000 members at the start, the community grew past 50,000 and is still growing today, adding over 2,000 new sign-ups a month. The platform now sees more than 12,500 monthly active users, has sold over 100,000 tickets, and has driven €350,000 in profit.",
-        images: [
-          {
-            alt: "22NIGHT community growth",
-            layout: "full",
-            placeholderClassName:
-              "bg-gradient-to-br from-orange-400/20 to-grey-200",
-          },
-        ],
       },
     ],
     credits:
@@ -381,10 +390,10 @@ export const projects: Project[] = [
           "SWAY started as little more than an idea. The founders of Frenzy, an Amsterdam techno brand and good friends of mine, wanted to build a sister brand for house music. But Frenzy was no small thing to live up to: eight years of work and a niche, opinionated community of around 15,000 followers with strong views on the scene. SWAY had to feel clearly part of that family while standing as its own brand, distinct enough that it wasn't just techno's little sibling. And it was starting from a blank page, with no name, identity, or concept yet.",
         images: [
           {
-            alt: "SWAY brand concept starting point",
+            src: "/assets/projects/sway/sway-thumbnail.png",
+            alt: "SWAY",
             layout: "full",
-            placeholderClassName:
-              "bg-gradient-to-br from-orange-100 to-orange-400/40",
+            aspectClassName: "aspect-[16/9]",
           },
         ],
       },
@@ -395,16 +404,20 @@ export const projects: Project[] = [
           "I started with a brand-concept deck that explored where SWAY could go. It covered the brand philosophy and moodboard, the logo wordmark and icon, the visual territory, ideas for video and photography, even venue concepts and future collaborations. The throughline was finding a house identity that felt unmistakably part of the Frenzy family while standing clearly on its own. I pitched the deck, and from that point I have been actively helping them shape the creative direction of the brand.",
         images: [
           {
-            alt: "SWAY brand concept deck",
-            layout: "grid-2",
-            placeholderClassName:
-              "bg-gradient-to-br from-grey-200 to-orange-100",
+            src: "/assets/projects/sway/sway-image-1.png",
+            alt: "SWAY moodboard",
+            layout: "full",
+            aspectClassName: "aspect-[16/9]",
           },
           {
-            alt: "SWAY moodboard and visual territory",
+            src: "/assets/projects/sway/sway-image-2.png",
+            alt: "SWAY artist poster",
             layout: "grid-2",
-            placeholderClassName:
-              "bg-gradient-to-br from-orange-400/30 to-grey-300",
+          },
+          {
+            src: "/assets/projects/sway/sway-image-3.png",
+            alt: "SWAY event timetable",
+            layout: "grid-2",
           },
         ],
       },
@@ -415,10 +428,10 @@ export const projects: Project[] = [
           "I shape a lot of what SWAY looks and feels like day to day. That spans the brand foundations and visual identity through to motion artwork and animations, print production, and the social graphics and content that carry the brand online. The work keeps the look consistent as SWAY grows from a concept into a brand people recognise.",
         images: [
           {
-            alt: "SWAY brand assets and social content",
+            src: "/assets/projects/sway/sway-reel.png",
+            alt: "SWAY event poster",
             layout: "full",
-            placeholderClassName:
-              "bg-gradient-to-br from-grey-100 via-orange-100 to-orange-400/20",
+            aspectClassName: "aspect-[9/16]",
           },
         ],
       },
@@ -427,14 +440,6 @@ export const projects: Project[] = [
         title: "Outcome",
         description:
           "SWAY went from an idea to a brand with a real presence. Its first event filled Sissi's Amsterdam in May 2026, selling around 400 tickets to fill the room, and the Frenzy community embraced it. That was enough to lock in two more dates at the same venue this year, with the next one an intimate boat party in August, a collaboration with the Zomervloot. What started as a blank page is now a house brand with its own identity, its own crowd, and its own momentum.",
-        images: [
-          {
-            alt: "SWAY first event at Sissi's Amsterdam",
-            layout: "full",
-            placeholderClassName:
-              "bg-gradient-to-br from-orange-400/20 to-grey-200",
-          },
-        ],
       },
     ],
     credits:

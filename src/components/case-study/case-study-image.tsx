@@ -14,7 +14,8 @@ export function CaseStudyImageBlock({
   return (
     <div
       className={cn(
-        "relative aspect-[16/10] w-full overflow-hidden rounded-2xl",
+        "relative w-full overflow-hidden rounded-2xl",
+        image.aspectClassName ?? "aspect-[16/10]",
         image.placeholderClassName ?? "bg-grey-200",
         className
       )}
