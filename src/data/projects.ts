@@ -359,7 +359,7 @@ export const projects: Project[] = [
       },
     ],
     credits:
-      "Special thanks to the founders, Junior and Jurre, for trusting me with your brand and product. It has been such a blessing to help you realise your ideas and build something from scratch together.",
+      "Special thanks to the founders, Junior Brussaard and Jurre Branderhorst, for trusting me with your brand and product. It has been such a blessing to help you realise your ideas and build something from scratch together.",
     websiteUrl: "https://22night.com/",
   },
   {
